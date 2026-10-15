@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100e18">
+  <title>Harry Potter Trivia Challenge</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <main class="app">
+    <header class="site-header">
+      <div class="crest" aria-hidden="true">HP</div>
+      <p class="eyebrow">The Wizarding World Quiz</p>
+      <h1>Harry Potter<br><span>Trivia Challenge</span></h1>
+      <div class="ornament" aria-hidden="true">✦ ━━━━━ ✦ ━━━━━ ✦</div>
+      <p class="intro">
+        Enter the halls of Hogwarts and prove your knowledge
+        of the magical world.
+      </p>
+    </header>
+
+    <section class="panel" id="setup-screen">
+      <p class="section-label">Your journey begins</p>
+      <h2>Choose your difficulty</h2>
+      <p class="muted">Select the level that best describes your knowledge.</p>
+
+      <div class="difficulty-list">
+        <button class="difficulty-card" data-level="0">
+          <span class="level-number">I</span>
+          <span class="level-info">
+            <strong>Squib</strong>
+            <small>Very limited magical knowledge</small>
+          </span>
+          <span class="arrow">›</span>
+        </button>
+
+        <button class="difficulty-card" data-level="1">
+          <span class="level-number">II</span>
+          <span class="level-info">
+            <strong>First Year</strong>
+            <small>A beginner's introduction</small>
+          </span>
+          <span class="arrow">›</span>
+        </button>
+
+        <button class="difficulty-card" data-level="2">
+          <span class="level-number">III</span>
+          <span class="level-info">
+            <strong>Prefect</strong>
+            <small>A well-rounded knowledge</small>
+          </span>
+          <span class="arrow">›</span>
+        </button>
+
+        <button class="difficulty-card" data-level="3">
+          <span class="level-number">IV</span>
+          <span class="level-info">
+            <strong>Hermione</strong>
+            <small>Exceptional knowledge</small>
+          </span>
+          <span class="arrow">›</span>
+        </button>
+
+        <button class="difficulty-card" data-level="4">
+          <span class="level-number">V</span>
+          <span class="level-info">
+            <strong>Headmaster</strong>
+            <small>Mastery of the wizarding world</small>
+          </span>
+          <span class="arrow">›</span>
+        </button>
+      </div>
+
+      <div class="settings">
+        <label class="checkbox-row">
+          <input type="checkbox" id="show-corrections">
+          <span>Show the correct answer when I get a question wrong</span>
+        </label>
+      </div>
+
+      <p class="fine-print">
+        16 questions · Four choices per question · One bonus question
+      </p>
+    </section>
+
+    <section class="panel quiz-panel" id="quiz-screen" hidden>
+      <div class="quiz-topline">
+        <span id="current-level">Squib</span>
+        <span id="question-counter">Question 1 of 16</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <h2 id="question-text">Question goes here</h2>
+
+      <div class="answer-list" id="answer-list"></div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+
+      <button class="primary-button" id="next-button" disabled>
+        Next Question
+      </button>
+    </section>
+
+    <section class="panel results-panel" id="results-screen" hidden>
+      <p class="section-label">Examination complete</p>
+      <h2 id="results-title">Your results</h2>
+      <div class="score-display" id="score-display">0 / 16</div>
+      <p id="results-summary"></p>
+      <div class="result-details" id="result-details"></div>
+      <button class="primary-button" id="restart-button">
+        Return to Hogwarts
+      </button>
+    </section>
+
+    <footer>
+      <span>✦</span> A magical test of knowledge <span>✦</span>
+    </footer>
+  </main>
+</body>
+</html>
